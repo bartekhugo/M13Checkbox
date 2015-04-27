@@ -154,6 +154,8 @@ typedef enum {
  */
 - (UIBezierPath *)getDefaultShape;
 
+- (UIBezierPath *)getDefaultShapeStroke;
+
 /**@name Appearance*/
 /**
  Wether or not to draw the check box flat, without a glossy overlay.

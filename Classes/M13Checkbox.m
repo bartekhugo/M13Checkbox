@@ -109,6 +109,8 @@
     } else if (checkbox.checkState == M13CheckboxStateChecked) {
         [checkColor setFill];
         [[checkbox getDefaultShape] fill];
+        [checkColor setStroke];
+        [[checkbox getDefaultShapeStroke] stroke];
     } else if (checkbox.checkState == M13CheckboxStateMixed) {
         UIBezierPath *mixedPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(checkbox.strokeWidth + ((boxRect.size.width - (.5 * self.frame.size.height)) * 0.5), (self.frame.size.height * .5) - ((0.09375 * self.frame.size.height) * .5), .5 * self.frame.size.height, 0.1875 * self.frame.size.height) cornerRadius:(0.09375 * self.frame.size.height)];
         [checkColor setFill];
@@ -300,6 +302,10 @@
     [bezierPath closePath];
     bezierPath.miterLimit = 0;
     return bezierPath;
+}
+
+- (UIBezierPath *)getDefaultShapeStroke {
+    return nil;
 }
 
 - (void)autoFitFontToHeight
